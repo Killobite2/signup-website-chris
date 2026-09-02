@@ -1,4 +1,4 @@
-# Sign Up Website Page
+# Signup Website — Chris
 
 Standalone newsletter signup page for CL Growth Academy, built on the brand's
 existing design tokens (Workshop Ink / Oxblood / Paper / Mustard / Cream —
