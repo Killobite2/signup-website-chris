@@ -6,11 +6,31 @@ Alfa Slab One, Yellowtail, Work Sans). Subscribes to
 `https://clgrowth.beehiiv.com/subscribe`.
 
 Copied out of the main [cl-growth-academy-website](https://github.com/Killobite2/cl-growth-academy-website)
-project so it can be deployed and tracked on its own. `css/styles.css` and
-`js/main.js` are trimmed to what this one page uses.
+project so it can be deployed and tracked on its own.
 
-The same page also exists at `/newsletter.html` in the main site. Any change
-here needs mirroring there, or the two copies drift.
+**This is the repo Vercel deploys**, as the `signup-website-chris` project at
+`signup-website-chris.vercel.app`. There is also a
+[website-sign-up](https://github.com/Killobite2/website-sign-up) repo holding an
+older copy of the same page; it is not connected to any Vercel project and is
+superseded by this one. Check which repo you are in before editing.
+
+## Keeping it in sync
+
+`newsletter.html`, `css/styles.css` and `js/main.js` are **straight copies** from
+the main repo. They used to be trimmed to just what this page needs, and that is
+exactly what went wrong: the page picked up `.form-pill`, the drawn-tick success
+state, `.sr-only`, `.section-callout` and `.keep-together` upstream, and none of
+the styling came with it. Whole files cost about 55KB more and remove the
+failure mode.
+
+To sync, copy those three files across, then re-point the two self-references
+this repo owns:
+
+- `<link rel="canonical">` and `og:url` &rarr; `signup-website-chris.vercel.app`
+
+Everything else, the brand link included, still points at the main site on
+purpose. After copying, check that every class the page uses is defined in its
+CSS; that single check is what catches a bad sync.
 
 ## Layout notes
 
