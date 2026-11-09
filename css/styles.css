@@ -2675,6 +2675,7 @@ body.photo-hero .site-header.is-scrolled {
    because it is a 36-character unbreakable string. */
 .newsletter-footer p > a:only-child {
   display: inline-block;
+  min-width: 44px;   /* "About" alone is 41px of text */
   padding: var(--space-3) 0;
   overflow-wrap: anywhere;
 }
